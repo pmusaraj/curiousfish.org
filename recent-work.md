@@ -79,3 +79,47 @@ Announcement of passwordless login support using passkeys, enhancing security an
 
 Beta release of the new iOS mobile app for Discourse, featuring improved navigation and offline support.
 
+---
+
+### Discourse ID is now available. Try it today!
+
+**Posted:** October 10, 2025  
+**Link:** [https://meta.discourse.org/t/385007](https://meta.discourse.org/t/385007)  
+**Engagement:** 40 replies, 1530 views  
+**Tags:** discourse-id
+
+We're happy to announce that Discourse ID can now be enabled on all Discourse sites, including both hosted and self-hosted sites! Discourse ID provides a faster login experience across participating Discourse sites so you don't have to create separate logins for each Discourse you visit.
+
+---
+
+### Handling plural forms in activity pub localization strings
+
+**Posted:** April 27, 2025  
+**Link:** [https://meta.discourse.org/t/363687](https://meta.discourse.org/t/363687)  
+**Engagement:** 11 replies, 194 views  
+**Tags:** activitypub
+
+Discussion on handling plural forms in ActivityPub plugin localization strings, identifying strings that need proper pluralization for internationalization.
+
+---
+
+### Pinch zoom crashes on iOS (Graceful theme)
+
+**Posted:** January 11, 2025  
+**Link:** [https://meta.discourse.org/t/346659](https://meta.discourse.org/t/346659)  
+**Engagement:** 20 replies, 1629 views  
+**Tags:** graceful-theme
+
+Bug report and discussion about pinch zoom crashes on iOS 18.2 when using the Graceful theme, including workarounds and potential fixes.
+
+---
+
+### Issues with linked actors
+
+**Posted:** December 19, 2024  
+**Link:** [https://meta.discourse.org/t/343469](https://meta.discourse.org/t/343469)  
+**Engagement:** 11 replies, 196 views  
+**Tags:** fixed, activitypub
+
+Tracking issues with Discourse-to-Discourse linked actors feature in the ActivityPub plugin after merging initial support commit.
+
