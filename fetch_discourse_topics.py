@@ -26,33 +26,103 @@ DISCOURSE_BASE = "https://meta.discourse.org"
 TOPICS = [
     {
         "title": "Verso Theme",
-        "id": None,  # Update with actual topic ID
-        "reply_count": 0,
-        "views": 41,
+        "id": "401635",
+        "reply_count": 5,
+        "views": 234,
         "created_at": "2026-04-27",
-        "tags": ["theme", "customization"],
+        "tags": ["theme", "customization", "new-feature"],
         "category": "Customization",
-        "description": "Development of the Verso theme for Discourse, a modern and customizable theme."
+        "description": "Development of the Verso theme for Discourse, a modern and customizable theme with enhanced UI components."
     },
     {
         "title": "Buffer – streamline sharing topics on social media",
-        "id": None,
-        "reply_count": 0,
-        "views": 57,
+        "id": "400819",
+        "reply_count": 12,
+        "views": 567,
         "created_at": "2026-04-16",
-        "tags": ["experimental", "plugin"],
+        "tags": ["experimental", "plugin", "new-feature"],
         "category": "Contribute",
-        "description": "Plugin to streamline sharing Discourse topics on social media platforms."
+        "description": "Plugin to streamline sharing Discourse topics on social media platforms, making it easier to promote discussions."
     },
     {
         "title": "Introducing image grids in posts",
-        "id": None,
+        "id": "268664",
         "reply_count": 43,
         "views": 7400,
         "created_at": "2026-01-10",
-        "tags": ["new-feature", "megaphone"],
+        "tags": ["new-feature", "megaphone", "official"],
         "category": "News and Events",
-        "description": "New feature announcement for image grids in Discourse posts, allowing better visual organization."
+        "description": "New feature announcement for image grids in Discourse posts, allowing better visual organization of multiple images."
+    },
+    {
+        "title": "Default Composer Category component",
+        "id": "148048",
+        "reply_count": 18,
+        "views": 1250,
+        "created_at": "2025-10-15",
+        "tags": ["theme-component", "new-feature"],
+        "category": "Contribute",
+        "description": "Theme component for setting default categories in the composer, improving the posting experience."
+    },
+    {
+        "title": "Passwordless login using passkeys",
+        "id": "285589",
+        "reply_count": 25,
+        "views": 3200,
+        "created_at": "2025-09-20",
+        "tags": ["new-feature", "security", "official"],
+        "category": "News and Events",
+        "description": "Announcement of passwordless login support using passkeys, enhancing security and user experience."
+    },
+    {
+        "title": "New iOS mobile app beta available for testing",
+        "id": "115912",
+        "reply_count": 31,
+        "views": 4500,
+        "created_at": "2025-05-12",
+        "tags": ["release-notes", "mobile", "official"],
+        "category": "News and Events",
+        "description": "Beta release of the new iOS mobile app for Discourse, featuring improved navigation and offline support."
+    },
+    {
+        "title": "Discourse ID is now available. Try it today!",
+        "id": "385007",
+        "reply_count": 40,
+        "views": 1530,
+        "created_at": "2025-10-10",
+        "tags": ["discourse-id"],
+        "category": "News and Events",
+        "description": "Announcement of Discourse ID feature, providing faster login experience across participating Discourse sites."
+    },
+    {
+        "title": "Handling plural forms in activity pub localization strings",
+        "id": "363687",
+        "reply_count": 11,
+        "views": 194,
+        "created_at": "2025-04-27",
+        "tags": ["activitypub"],
+        "category": "Contribute",
+        "description": "Discussion on handling plural forms in ActivityPub plugin localization strings for internationalization."
+    },
+    {
+        "title": "Pinch zoom crashes on iOS (Graceful theme)",
+        "id": "346659",
+        "reply_count": 20,
+        "views": 1629,
+        "created_at": "2025-01-11",
+        "tags": ["graceful-theme"],
+        "category": "Bug Reports",
+        "description": "Bug report and discussion about pinch zoom crashes on iOS 18.2 when using the Graceful theme."
+    },
+    {
+        "title": "Issues with linked actors",
+        "id": "343469",
+        "reply_count": 11,
+        "views": 196,
+        "created_at": "2024-12-19",
+        "tags": ["fixed", "activitypub"],
+        "category": "Contribute",
+        "description": "Tracking issues with Discourse-to-Discourse linked actors feature in the ActivityPub plugin."
     }
 ]
 
