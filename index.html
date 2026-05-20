@@ -1,53 +1,122 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#a8d4e6">
-<title>Curious Fish - by Penar Musaraj</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#001219">
+  <meta name="description" content="Penar Musaraj — software, community tools, and small useful systems.">
+  <title>Curious Fish — Penar Musaraj</title>
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=geist@400,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="bg">
-    <img src="" alt="">
-  </div>
-
-  <div id="header">
-    <div id="logo">
-      <h1>curious fish</h1>
-      <p class="subline">By Penar Musaraj
-        &mdash;
-        <a href="https://github.com/pmusaraj">GitHub</a> &middot;
-        <a href="https://bsky.app/profile/musaraj.com">Bluesky</a> &middot;
-        <a href="https://meta.discourse.org/u/pmusaraj">Discourse Meta</a>
-      </p>
-    </div>
-  </div>
-
-  <div class="content">
-    <div class="centro">
-      <div class="col-narrow">
-        <h2 class="hello">Hello! I'm Penar.</h2>
+  <main class="page">
+    <header class="hero" aria-labelledby="site-title">
+      <p class="eyebrow">curiousfish.org / musaraj.com</p>
+      <h1 id="site-title">Penar Musaraj</h1>
+      <p class="hero-summary">Current role: Engineering manager at <a href="https://www.discourse.org">Discourse</a></p>
+    </header>
+    <section class="section social-stats" aria-labelledby="stats-title">
+      <div class="stats-grid">
+      <a class="stats-card bluesky-card" href="https://bsky.app/profile/musaraj.com" aria-label="Open Bluesky profile">
+        <img class="stats-favicon" src="images/social-bluesky.png" alt="" loading="lazy">
+        <p class="stats-handle">@musaraj.com</p>
+        <div class="stats-row bluesky-card-stats">
+          <div class="stat">
+            <strong>246</strong>
+            <span>Following</span>
+          </div>
+          <div class="stat">
+            <strong>104</strong>
+            <span>Followers</span>
+          </div>
+          <div class="stat">
+            <strong>59</strong>
+            <span>Posts</span>
+          </div>
+        </div>
+      </a>
+      <a class="stats-card github-card" href="https://github.com/pmusaraj" aria-label="Open GitHub profile">
+        <img class="stats-favicon" src="images/social-github.png" alt="" loading="lazy">
+        <p class="stats-handle">@pmusaraj</p>
+        <div class="stats-row github-card-stats">
+          <div class="stat">
+            <strong>102</strong>
+            <span>Repos</span>
+          </div>
+          <div class="stat">
+            <strong>4,710</strong>
+            <span>Commits</span>
+          </div>
+          <div class="stat">
+            <strong>3,517</strong>
+            <span>PR reviews</span>
+          </div>
+        </div>
+      </a>
+      <a class="stats-card meta-card" href="https://meta.discourse.org/u/pmusaraj" aria-label="Open Discourse Meta profile">
+        <img class="stats-favicon" src="images/social-discourse-meta.jpg" alt="" loading="lazy">
+        <p class="stats-handle">@pmusaraj</p>
+        <div class="stats-row meta-card-stats">
+          <div class="stat">
+            <strong>4,795</strong>
+            <span>Posts</span>
+          </div>
+          <div class="stat">
+            <strong>11,212</strong>
+            <span>Likes</span>
+          </div>
+          <div class="stat">
+            <strong>3,130</strong>
+            <span>Days</span>
+          </div>
+        </div>
+      </a>
       </div>
-      <div class="col-wide">Since September 2018, I am a full-time developer at <a href="https://www.discourse.org">Discourse</a>. Previously I was a frontend lead at Kobo Toolbox, and before that I did freelance work for more than 10 years.</div>
-      <div class="clear"></div>
-    </div>
-  </div>
-  <script>
-    var n = Math.floor(Math.random() * 5) + 1;
-    document.querySelector('#bg img').src = 'images/bg' + n + '.jpg';
-  </script>
-
-  <script>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-77132-2']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+    </section>
+    <section class="section discourse-projects" aria-labelledby="discourse-projects-title">
+      <div class="section-head">
+        <h2 id="discourse-projects-title">Work</h2>
+      </div>
+      <ul class="item-list compact dated-list">
+        <li>
+          <time datetime="2026">2026</time>
+          <span>Led implementation and launch of the Free plan</span>
+        </li>
+        <li>
+          <time datetime="2025">2025</time>
+          <span>Lead developer for <a href="https://id.discourse.com">Discourse ID</a> (centralized auth service)</span>
+        </li>
+        <li>
+          <time datetime="2024">2024</time>
+          <span>Launched <a href="https://discover.discourse.com">discover.discourse.com</a>, a gallery of active Discourse forums</span>
+        </li>
+        <li>
+          <time datetime="2023">Previously</time>
+          <span>Passkeys, image grids, SVG icons, iOS/Android DiscourseHub app</span>
+        </li>
+      </ul>
+    </section>
+    <section class="section" aria-labelledby="projects-title">
+      <div class="section-head">
+        <h2 id="projects-title">Play</h2>
+      </div>
+      <ol class="item-list project-list">
+        <li>
+          <a href="https://github.com/pmusaraj/discourse-theme-screenshots">Discourse theme screenshots</a>
+          <span>Scheduled screenshot review for Discourse themes, built to make visual regressions easier to scan.</span>
+        </li>
+        <li>
+          <a href="https://github.com/pmusaraj/whatson">Hey, what’s on TV?</a>
+          <span>A lightweight guide and search engine for TV programming. Simple, easy, static. <a href="https://heywhatson.tv">heywhatson.tv</a></span>
+        </li>
+        <li>
+          <a href="https://github.com/discourse/discourse-right-sidebar-blocks">Discourse Right Sidebar Blocks</a>
+          <span>A theme component for Discourse, showing various blocks as a right-hand sidebar. Built in 2022, used in over 150 Discourse communities.</span>
+        </li>
+      </ol>
+    </section>
+  </main>
 </body>
 </html>

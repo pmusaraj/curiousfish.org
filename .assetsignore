@@ -1,0 +1,6 @@
+# Only upload public site assets. The Worker still allowlists these paths at runtime.
+*
+!index.html
+!style.css
+!images/
+!images/**
