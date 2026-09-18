@@ -1,175 +1,65 @@
 #!/usr/bin/env python3
-"""Update the stats cards in index.html.
-
-This is intentionally the only automation for the site. The page itself is plain
-HTML/CSS; edit index.html and style.css directly for everything else.
-"""
-
-from __future__ import annotations
-
-from datetime import datetime, timedelta, timezone
-from html import escape
+"""Refresh public profile activity timestamps, then rebuild HTML and Markdown."""
+from datetime import datetime, timezone
 from pathlib import Path
 import json
-import os
-import re
 import urllib.error
 import urllib.request
 
-ROOT = Path(__file__).resolve().parents[1]
-INDEX = ROOT / "index.html"
+from build_site import build, parse_timestamp
 
-FALLBACK = {
-    "bluesky": {"followsCount": 246, "followersCount": 104, "postsCount": 59},
-    "github": {"public_repos": 102, "commits_total": 4710, "reviews_total": 3517},
-    "meta_summary": {"post_count": 4795, "likes_received": 11207, "days_visited": 3125},
+ROOT = Path(__file__).resolve().parents[1]
+SOURCES = {
+    "github": "https://api.github.com/users/pmusaraj/events/public?per_page=100",
+    "bluesky": "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=musaraj.com&filter=posts_with_replies&limit=100&includePins=false",
+    "meta": "https://meta.discourse.org/user_actions.json?username=pmusaraj&filter=1,4,5&limit=50",
 }
 
 
-def fetch_json(url: str, *, data: bytes | None = None, headers: dict[str, str] | None = None) -> dict:
-    request_headers = {"User-Agent": "curiousfish-stats/1.0"}
-    if headers:
-        request_headers.update(headers)
-    request = urllib.request.Request(url, data=data, headers=request_headers)
+def latest_activity(profile: str, data) -> str | None:
+    if profile == "github":
+        timestamps = [event["created_at"] for event in data]
+    elif profile == "bluesky":
+        timestamps = []
+        for entry in data["feed"]:
+            reason = entry.get("reason", {})
+            if reason.get("$type") == "app.bsky.feed.defs#reasonPin":
+                continue
+            if reason.get("$type") == "app.bsky.feed.defs#reasonRepost":
+                timestamps.append(reason["indexedAt"])
+            else:
+                timestamps.append(entry["post"]["record"]["createdAt"])
+    elif profile == "meta":
+        timestamps = [action["created_at"] for action in data["user_actions"]]
+    else:
+        raise ValueError(f"Unknown profile: {profile}")
+    dates = [parse_timestamp(value) for value in timestamps]
+    return max(dates).isoformat().replace("+00:00", "Z") if dates else None
+
+
+def fetch_activity(profile: str, url: str) -> str | None:
+    request = urllib.request.Request(url, headers={"User-Agent": "curiousfish-activity/1.0"})
     with urllib.request.urlopen(request, timeout=25) as response:
-        return json.load(response)
-
-
-def count(value: int | str | None) -> str:
-    if value is None:
-        return "0"
-    try:
-        return f"{int(value):,}"
-    except (TypeError, ValueError):
-        return "0"
-
-
-def stat(label: str, value: int | str | None) -> str:
-    return f'''          <div class="stat">
-            <strong>{count(value)}</strong>
-            <span>{escape(label)}</span>
-          </div>'''
-
-
-def replace_card_stats(html: str, card_class: str, stats: list[tuple[str, int | str | None]]) -> str:
-    pattern = re.compile(
-        rf'(<a class="stats-card {re.escape(card_class)}"[\s\S]*?<div class="stats-row {re.escape(card_class)}-stats">\n)'
-        rf'[\s\S]*?'
-        rf'(\n        </div>\n      </a>)',
-        re.MULTILINE,
-    )
-    replacement = r"\1" + "\n".join(stat(label, value) for label, value in stats) + r"\2"
-    html, replacements = pattern.subn(replacement, html, count=1)
-    if replacements != 1:
-        raise RuntimeError(f"Could not find stats card: {card_class}")
-    return html
-
-
-def github_contribution_stats(created_at: str | None) -> dict[str, int]:
-    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
-    if not token:
-        return FALLBACK["github"]
-
-    now = datetime.now(timezone.utc).replace(microsecond=0)
-    try:
-        start = datetime.fromisoformat((created_at or "2009-01-01T00:00:00Z").replace("Z", "+00:00"))
-    except ValueError:
-        start = datetime(2009, 1, 1, tzinfo=timezone.utc)
-
-    query = """
-    query($user: String!, $from: DateTime!, $to: DateTime!) {
-      user(login: $user) {
-        contributionsCollection(from: $from, to: $to) {
-          totalCommitContributions
-          totalPullRequestReviewContributions
-        }
-      }
-    }
-    """
-
-    totals = {"commits_total": 0, "reviews_total": 0}
-    window_start = start
-    while window_start < now:
-        window_end = min(window_start + timedelta(days=365), now)
-        payload = json.dumps(
-            {
-                "query": query,
-                "variables": {
-                    "user": "pmusaraj",
-                    "from": window_start.isoformat().replace("+00:00", "Z"),
-                    "to": window_end.isoformat().replace("+00:00", "Z"),
-                },
-            }
-        ).encode()
-        data = fetch_json(
-            "https://api.github.com/graphql",
-            data=payload,
-            headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
-        )
-        if data.get("errors"):
-            raise RuntimeError(data["errors"])
-        collection = data["data"]["user"]["contributionsCollection"]
-        totals["commits_total"] += collection.get("totalCommitContributions", 0)
-        totals["reviews_total"] += collection.get("totalPullRequestReviewContributions", 0)
-        window_start = window_end + timedelta(seconds=1)
-    return totals
+        return latest_activity(profile, json.load(response))
 
 
 def main() -> None:
-    try:
-        bluesky = fetch_json("https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?actor=musaraj.com")
-    except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError):
-        bluesky = FALLBACK["bluesky"]
-
-    try:
-        github_profile = fetch_json("https://api.github.com/users/pmusaraj")
-    except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError):
-        github_profile = FALLBACK["github"]
-
-    created_at = github_profile.get("created_at")
-    if not isinstance(created_at, str):
-        created_at = None
-    try:
-        github_contributions = github_contribution_stats(created_at)
-    except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError, RuntimeError):
-        github_contributions = FALLBACK["github"]
-    github = {**FALLBACK["github"], **github_profile, **github_contributions}
-
-    try:
-        meta_summary = fetch_json("https://meta.discourse.org/u/pmusaraj/summary.json").get("user_summary", {})
-    except (urllib.error.URLError, TimeoutError, KeyError, json.JSONDecodeError):
-        meta_summary = FALLBACK["meta_summary"]
-    meta_summary = {**FALLBACK["meta_summary"], **meta_summary}
-
-    html = INDEX.read_text()
-    html = replace_card_stats(
-        html,
-        "bluesky-card",
-        [
-            ("Following", bluesky.get("followsCount")),
-            ("Followers", bluesky.get("followersCount")),
-            ("Posts", bluesky.get("postsCount")),
-        ],
-    )
-    html = replace_card_stats(
-        html,
-        "github-card",
-        [
-            ("Repos", github.get("public_repos")),
-            ("Commits", github.get("commits_total")),
-            ("PR reviews", github.get("reviews_total")),
-        ],
-    )
-    html = replace_card_stats(
-        html,
-        "meta-card",
-        [
-            ("Posts", meta_summary.get("post_count")),
-            ("Likes", meta_summary.get("likes_received")),
-            ("Days", meta_summary.get("days_visited")),
-        ],
-    )
-    INDEX.write_text(html)
+    stats_file = ROOT / "profile-stats.json"
+    previous = json.loads(stats_file.read_text())
+    stats = {"updated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")}
+    for profile, url in SOURCES.items():
+        key = f"{profile}_last_activity"
+        stats[key] = previous.get(key)
+        try:
+            latest = fetch_activity(profile, url)
+            # Empty feeds (including GitHub's limited event window) must not
+            # erase a known date or claim the user was just active.
+            if latest and (not stats[key] or parse_timestamp(latest) > parse_timestamp(stats[key])):
+                stats[key] = latest
+        except (urllib.error.URLError, TimeoutError, KeyError, TypeError, ValueError) as error:
+            print(f"Keeping previous {key}: {error}")
+    stats_file.write_text(json.dumps(stats, indent=2) + "\n")
+    build(ROOT)
 
 
 if __name__ == "__main__":

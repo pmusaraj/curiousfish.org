@@ -1,34 +1,55 @@
 # curiousfish.org
 
-A deliberately simple static site.
+A static homepage built from Markdown and served by a Cloudflare Worker.
 
-Edit these files directly:
+## Edit
 
-- `index.html` — all page content, including the manually curated sections
-- `style.css` — all styling
+Edit `notable.md` for New & Notable. Items appear in file order; links and years are optional.
 
-There is no build step. Open `index.html` in a browser, or run a tiny local server:
+```markdown
+## [Project name](https://example.com)
+2026
 
-```sh
-python3 -m http.server 8000
+A short description.
 ```
 
-Then visit `http://localhost:8000`.
+Page layout lives in `templates/index.html`; styling lives in `style.css`.
+`index.html` and `index.md` are generated—don’t edit them directly.
 
-## Updating profile stats
-
-The stats cards in `index.html` are the only automated part. Update them manually with:
-
-```sh
-python3 scripts/update_stats.py
-```
-
-GitHub Actions also runs the same script every two days and commits `index.html` if the numbers changed.
-
-## Deploying
-
-Deploy the current files as-is. `.assetsignore` keeps non-public files out of the upload, while `worker.js` only serves `/`, `/index.html`, `/style.css`, and `/images/*`.
+## Run locally
 
 ```sh
-wrangler deploy
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+npx wrangler dev
 ```
+
+Keep the virtual environment active. Wrangler rebuilds automatically.
+For a standalone build, run `python scripts/build_site.py`.
+
+## Profile activity
+
+`python scripts/update_stats.py` refreshes public GitHub events, Bluesky
+posts/reposts, and Meta posts/likes. GitHub Actions runs it daily.
+Failed requests retain the previous dates. The browser displays their age
+in local time; Markdown uses the last refresh time.
+
+## Markdown
+
+Visit `/index.md`, or request the homepage with `Accept: text/markdown`:
+
+```sh
+curl -H 'Accept: text/markdown' http://localhost:8787/
+```
+
+## Check and deploy
+
+```sh
+python -m unittest test_site.py
+node --test test_worker.mjs
+npx wrangler deploy
+```
+
+Deployment rebuilds the pages. Install `requirements.txt` first in CI.
+Only public assets are uploaded; source files are excluded by `.assetsignore`.

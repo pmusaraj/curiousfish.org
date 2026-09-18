@@ -1,122 +1,79 @@
+<!-- Generated page template. Edit notable.md for New & Notable. -->
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#001219">
+  <meta name="theme-color" content="#f9fbfd" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141c28" media="(prefers-color-scheme: dark)">
   <meta name="description" content="Penar Musaraj — software, community tools, and small useful systems.">
   <title>Curious Fish — Penar Musaraj</title>
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=geist@400,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="activity.js" defer></script>
 </head>
-<body>
+<body class="avenir">
   <main class="page">
-    <header class="hero" aria-labelledby="site-title">
-      <p class="eyebrow">curiousfish.org / musaraj.com</p>
-      <h1 id="site-title">Penar Musaraj</h1>
-      <p class="hero-summary">Current role: Engineering manager at <a href="https://www.discourse.org">Discourse</a></p>
+    <header>
+      <p class="brand">curiousfish.org / musaraj.com</p>
+      <h1>Penar Musaraj</h1>
+      <p class="intro">Engineering manager at <a href="https://www.discourse.org">Discourse</a>.<br>Based in Montreal.</p>
+      <nav class="socials" aria-label="Social profiles">
+        <a href="https://github.com/pmusaraj" title="Last activity"><img src="images/social-github.png" alt=""><span>GitHub</span><time class="stat" datetime="2026-09-17T21:25:36Z" title="Last activity" aria-label="Last activity: today">today</time></a>
+        <a href="https://bsky.app/profile/musaraj.com" title="Last activity"><img src="images/social-bluesky.png" alt=""><span>Bluesky</span><time class="stat" datetime="2026-09-16T02:40:57.501000Z" title="Last activity" aria-label="Last activity: yesterday">yesterday</time></a>
+        <a href="https://meta.discourse.org/u/pmusaraj" title="Last activity"><img src="images/social-discourse.png" alt=""><span>Meta</span><time class="stat" datetime="2026-09-17T17:37:39.104000Z" title="Last activity" aria-label="Last activity: today">today</time></a>
+      </nav>
     </header>
-    <section class="section social-stats" aria-labelledby="stats-title">
-      <div class="stats-grid">
-      <a class="stats-card bluesky-card" href="https://bsky.app/profile/musaraj.com" aria-label="Open Bluesky profile">
-        <img class="stats-favicon" src="images/social-bluesky.png" alt="" loading="lazy">
-        <p class="stats-handle">@musaraj.com</p>
-        <div class="stats-row bluesky-card-stats">
-          <div class="stat">
-            <strong>266</strong>
-            <span>Following</span>
-          </div>
-          <div class="stat">
-            <strong>120</strong>
-            <span>Followers</span>
-          </div>
-          <div class="stat">
-            <strong>118</strong>
-            <span>Posts</span>
-          </div>
-        </div>
-      </a>
-      <a class="stats-card github-card" href="https://github.com/pmusaraj" aria-label="Open GitHub profile">
-        <img class="stats-favicon" src="images/social-github.png" alt="" loading="lazy">
-        <p class="stats-handle">@pmusaraj</p>
-        <div class="stats-row github-card-stats">
-          <div class="stat">
-            <strong>110</strong>
-            <span>Repos</span>
-          </div>
-          <div class="stat">
-            <strong>4,886</strong>
-            <span>Commits</span>
-          </div>
-          <div class="stat">
-            <strong>3,841</strong>
-            <span>PR reviews</span>
-          </div>
-        </div>
-      </a>
-      <a class="stats-card meta-card" href="https://meta.discourse.org/u/pmusaraj" aria-label="Open Discourse Meta profile">
-        <img class="stats-favicon" src="images/social-discourse-meta.jpg" alt="" loading="lazy">
-        <p class="stats-handle">@pmusaraj</p>
-        <div class="stats-row meta-card-stats">
-          <div class="stat">
-            <strong>4,855</strong>
-            <span>Posts</span>
-          </div>
-          <div class="stat">
-            <strong>11,349</strong>
-            <span>Likes</span>
-          </div>
-          <div class="stat">
-            <strong>3,235</strong>
-            <span>Days</span>
-          </div>
-        </div>
-      </a>
-      </div>
-    </section>
-    <section class="section discourse-projects" aria-labelledby="discourse-projects-title">
-      <div class="section-head">
-        <h2 id="discourse-projects-title">Work</h2>
-      </div>
-      <ul class="item-list compact dated-list">
+    <section aria-labelledby="projects-title">
+      <h2 id="projects-title">New &amp; Notable</h2>
+      <ul>
         <li>
-          <time datetime="2026">2026</time>
-          <span>Led implementation and launch of the Free plan</span>
+          <p class="project-title"><img class="project-icon" src="images/globe.svg" alt=""><a href="https://heywhatson.tv">heywhatson.tv</a><time datetime="2026">2026</time></p>
+          <div class="description"><p>A lightweight, static guide and search engine for TV channels and sporting events in France, Canada, UK, USA, Spain, Italy, Portugal.</p></div>
         </li>
         <li>
-          <time datetime="2025">2025</time>
-          <span>Lead developer for <a href="https://id.discourse.com">Discourse ID</a> (centralized auth service)</span>
+          <p class="project-title"><img class="project-icon" src="images/social-github.png" alt=""><a href="https://github.com/pmusaraj/paseo-pr-views">Paseo PR Views</a><time datetime="2026">2026</time></p>
+          <div class="description"><p>Saved GitHub PR searches, review status, and background notifications inside <a href="https://paseo.sh">Paseo</a>.</p></div>
         </li>
         <li>
-          <time datetime="2024">2024</time>
-          <span>Launched <a href="https://discover.discourse.com">discover.discourse.com</a>, a gallery of active Discourse forums</span>
+          <p class="project-title"><img class="project-icon" src="images/social-github.png" alt=""><a href="https://github.com/pmusaraj/discourse-standard-site">Standard.site plugin for Discourse</a><time datetime="2026">2026</time></p>
+          <div class="description"><p>Publish public Discourse topics to the AT Protocol through <a href="https://standard.site">Standard.site</a>.</p></div>
         </li>
         <li>
-          <time datetime="2023">Previously</time>
-          <span>Passkeys, image grids, SVG icons, iOS/Android DiscourseHub app</span>
+          <p class="project-title"><img class="project-icon" src="images/social-github.png" alt=""><a href="https://github.com/pmusaraj/discourse-theme-screenshots">Discourse theme screenshots</a><time datetime="2026">2026</time></p>
+          <div class="description"><p>An experimental automated repo and script to take scheduled screenshots of Discourse themes. Helps make visual regressions easier to spot.</p></div>
+        </li>
+        <li>
+          <p class="project-title"><img class="project-icon" src="images/social-github.png" alt=""><a href="https://github.com/pmusaraj/discourse-tapestry-connector">Discourse Tapestry connector</a><time datetime="2025">2025</time></p>
+          <div class="description"><p>Follow Discourse communities in <a href="https://usetapestry.com">Tapestry</a>, filtered by category or tag.</p></div>
+        </li>
+        <li>
+          <p class="project-title"><img class="project-icon" src="images/globe.svg" alt=""><a href="https://discover.discourse.com">Discourse Discover</a><time datetime="2024">2024</time></p>
+          <div class="description"><p>You wanna see what the best Discourse communities out there are? This is for you, then.</p></div>
+        </li>
+        <li>
+          <p class="project-title">Discourse misc.</p>
+          <div class="description"><p>Passkeys, image grids, SVG icons, iOS/Android mobile app development. Many theme components, plugins and features including <a href="https://id.discourse.com">Discourse ID</a>.</p></div>
+        </li>
+        <li>
+          <p class="project-title"><img class="project-icon" src="images/social-github.png" alt=""><a href="https://github.com/discourse/discourse-alt-icons">Discourse Alternative Icons</a><time datetime="2021">2021</time></p>
+          <div class="description"><p>Generates theme components replacing Font Awesome with other icon sets. Was pretty cool at the time, not as interesting in age of LLMs.</p></div>
+        </li>
+        <li>
+          <p class="project-title"><img class="project-icon" src="images/globe.svg" alt=""><a href="https://peshkupauje.com">Peshku pa ujê</a></p>
+          <div class="description"><p>An early community blog for Albanians, was a hit for a few years in the 2010s, now preserved as a static HTML archive.</p></div>
         </li>
       </ul>
     </section>
-    <section class="section" aria-labelledby="projects-title">
-      <div class="section-head">
-        <h2 id="projects-title">Play</h2>
-      </div>
-      <ol class="item-list project-list">
-        <li>
-          <a href="https://github.com/pmusaraj/discourse-theme-screenshots">Discourse theme screenshots</a>
-          <span>Scheduled screenshot review for Discourse themes, built to make visual regressions easier to scan.</span>
-        </li>
-        <li>
-          <a href="https://github.com/pmusaraj/whatson">Hey, what’s on TV?</a>
-          <span>A lightweight guide and search engine for TV programming. Simple, easy, static. <a href="https://heywhatson.tv">heywhatson.tv</a></span>
-        </li>
-        <li>
-          <a href="https://github.com/discourse/discourse-right-sidebar-blocks">Discourse Right Sidebar Blocks</a>
-          <span>A theme component for Discourse, showing various blocks as a right-hand sidebar. Built in 2022, used in over 150 Discourse communities.</span>
-        </li>
-      </ol>
-    </section>
+    <footer>
+      <div class="flags"><span role="img" aria-label="Albania">🇦🇱</span> <span role="img" aria-label="Canada">🇨🇦</span></div>
+      <button class="theme-toggle" type="button" hidden aria-label="Change color theme">
+        <svg class="theme-system" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        <svg class="theme-light" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        <svg class="theme-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>
+      </button>
+    </footer>
   </main>
+
 </body>
 </html>

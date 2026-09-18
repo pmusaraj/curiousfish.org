@@ -1,6 +1,9 @@
 # Only upload public site assets. The Worker still allowlists these paths at runtime.
 *
 !index.html
+!index.md
 !style.css
+!theme.js
+!activity.js
 !images/
 !images/**
