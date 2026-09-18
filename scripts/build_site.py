@@ -117,13 +117,13 @@ def render_music(root: Path) -> tuple[str, str]:
     from update_music import public_url
     playlist = public_url(music["playlist_url"])
     cards, lines = [], []
-    for album in music["albums"][:6]:
+    for album in music["albums"][:12]:
         url = public_url(album["url"])
         artwork = public_url(album["artwork"], artwork=True)
         title, artist = escape(album["title"]), escape(album["artist"])
-        cards.append(f'        <li><a href="{escape(url, quote=True)}">'
-                     f'<img src="{escape(artwork, quote=True)}" alt="" width="160" height="160" loading="lazy">'
-                     f'<span class="album-title">{title}</span><span class="album-artist">{artist}</span></a></li>')
+        cards.append(f'        <li><a href="{escape(url, quote=True)}" aria-label="{title} — {artist}">'
+                     f'<span class="album-artist" aria-hidden="true">{artist}</span>'
+                     f'<img src="{escape(artwork, quote=True)}" alt="" width="160" height="160" loading="lazy"></a></li>')
         # Escape remote text so it cannot introduce Markdown links or HTML.
         def md_text(value):
             return re.sub(r'([\\`*_{}\[\]()#!|])', r'\\\1', escape(value).replace("\n", " "))

@@ -70,6 +70,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 - [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
 - [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
 - [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
+- [Labyrinthe](<https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533>) — Feu\! Chatterton
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)
 

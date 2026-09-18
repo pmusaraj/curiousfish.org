@@ -19,20 +19,27 @@ class MusicTest(unittest.TestCase):
     def html(self, data):
         return '<script id="serialized-server-data" type="application/json">' + json.dumps(data) + '</script>'
 
-    def test_deduplicates_and_limits_albums_in_playlist_order(self):
+    def test_selects_last_twelve_tracks_in_playlist_order(self):
         data = self.fixture()
         tracks = data['data'][0]['data']['sections'][0]['items']
         original = copy.deepcopy(tracks[0])
         tracks.append(copy.deepcopy(original))
-        for i in range(8):
+        for i in range(16):
             track = copy.deepcopy(original)
             track['tertiaryLinks'][0]['title'] = f'Album {i}'
             track['tertiaryLinks'][0]['segue']['destination']['contentDescriptor']['identifiers']['storeAdamID'] = str(i)
             tracks.append(track)
         albums = update_music.parse_playlist(self.html(data))['albums']
-        self.assertEqual([a['title'] for a in albums], ['Liminal', 'Album 0', 'Album 1', 'Album 2', 'Album 3', 'Album 4'])
+        self.assertEqual([a['title'] for a in albums], [f'Album {i}' for i in range(4, 16)])
         self.assertEqual(albums[0]['artist'], 'Canine')
         self.assertTrue(albums[0]['artwork'].endswith('/400x400bb.jpg'))
+
+    def test_deduplicates_within_last_twelve_tracks(self):
+        data = self.fixture()
+        tracks = data['data'][0]['data']['sections'][0]['items']
+        tracks.append(copy.deepcopy(tracks[0]))
+        albums = update_music.parse_playlist(self.html(data))['albums']
+        self.assertEqual(len(albums), 1)
 
     def test_failed_or_empty_response_preserves_snapshot(self):
         data = self.fixture()

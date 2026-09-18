@@ -57,7 +57,7 @@ def parse_playlist(html):
         raise ValueError("No public tracks found; keeping the previous albums")
     albums = []
     seen = set()
-    for track in tracks:
+    for track in tracks[-12:]:
         links = [(link, link.get("segue", {}).get("destination", {}).get("contentDescriptor", {}))
                  for link in track.get("tertiaryLinks", [])]
         match = next(((link, desc) for link, desc in links if desc.get("kind") == "album"), None)
@@ -78,8 +78,6 @@ def parse_playlist(html):
         if not album["title"] or not album["artist"]:
             raise ValueError("Missing album title or artist")
         albums.append(album)
-        if len(albums) == 6:
-            break
     return {"playlist_url": PLAYLIST_URL, "albums": albums}
 
 

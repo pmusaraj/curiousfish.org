@@ -53,17 +53,16 @@ footer { display: flex; align-items: center; justify-content: space-between; mar
 .rotation-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
 .rotation-heading h2 { margin: 0; }
 .rotation-heading > a { font-size: 11px; color: var(--muted); }
-.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 180px; gap: 24px; width: max-content; position: relative; left: 50%; transform: translateX(-50%); text-align: center; }
+.album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 24px 12px; overflow-x: auto; }
+.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 144px; gap: 24px; width: max-content; margin-inline: auto; text-align: center; }
 .albums li { margin: 0; min-width: 0; }
-.albums a { display: block; }
+.albums a { display: flex; flex-direction: column; height: 100%; }
 .albums a:hover, .rotation-heading > a:hover { color: inherit; text-decoration: none; opacity: 0.75; }
 .albums img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; background: var(--line); }
-.album-title, .album-artist { display: block; overflow-wrap: anywhere; }
-.album-title { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; }
-.album-artist { margin-top: 2px; color: var(--muted); font-size: 12px; }
+.album-artist { display: flex; flex: 1; align-items: flex-end; justify-content: center; min-height: 2.8em; margin-bottom: 8px; color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; visibility: hidden; }
+.albums a:hover .album-artist, .albums a:focus-visible .album-artist { visibility: visible; }
 @media (max-width: 600px) {
-  .album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 24px 12px; overflow-x: auto; }
-  .albums { grid-auto-columns: 150px; gap: 20px; left: auto; transform: none; margin-inline: auto; }
+  .albums { grid-auto-columns: 120px; gap: 20px; }
 }
 .description a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .theme-toggle {
