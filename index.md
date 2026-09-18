@@ -71,6 +71,8 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 - [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
 - [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
 - [Labyrinthe](<https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533>) — Feu\! Chatterton
+- [The Square \(Original Soundtrack Album\)](<https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214>) — Bobby McFerrin
+- [...And All the Pieces Matter - Five Years of Music from the Wire](<https://music.apple.com/ca/album/efuge-efuge/270909506>) — Various Artists
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)
 
