@@ -50,7 +50,7 @@ You wanna see what the best Discourse communities out there are? This is for you
 
 ### Discourse misc.
 
-Passkeys, image grids, SVG icons, iOS/Android mobile app development. Many theme components, plugins and features including [Discourse ID](https://id.discourse.com).
+Passkeys, image grids, SVG icons, iOS/Android mobile app development, ActivityPub. Many theme components, plugins and features including [Discourse ID](https://id.discourse.com).
 
 ### [Discourse Alternative Icons](https://github.com/discourse/discourse-alt-icons)
 
