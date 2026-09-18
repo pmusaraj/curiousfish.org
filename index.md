@@ -74,5 +74,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 - [The Square \(Original Soundtrack Album\)](<https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214>) — Bobby McFerrin
 - [...And All the Pieces Matter - Five Years of Music from the Wire](<https://music.apple.com/ca/album/efuge-efuge/270909506>) — Various Artists
 - [René - Single](<https://music.apple.com/ca/album/ren%C3%A9/1500087282>) — Residente
+- [Diwan 2](<https://music.apple.com/ca/album/ecoute-moi-camarade/1442522147>) — Rachid Taha
+- [1200 mètres en tout](<https://music.apple.com/ca/album/svengo/1598123228>) — Odezenne
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)

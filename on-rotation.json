@@ -70,6 +70,20 @@
       "artist": "Residente",
       "url": "https://music.apple.com/ca/album/ren%C3%A9/1500087282",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f3/82/68/f3826888-d4ec-1104-e62f-f73f71c021fa/886448299189.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1442522147",
+      "title": "Diwan 2",
+      "artist": "Rachid Taha",
+      "url": "https://music.apple.com/ca/album/ecoute-moi-camarade/1442522147",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/52/30/f2/5230f2f0-fa89-4971-3b62-599a12790936/00602498433751.rgb.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1598123228",
+      "title": "1200 mètres en tout",
+      "artist": "Odezenne",
+      "url": "https://music.apple.com/ca/album/svengo/1598123228",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a7/58/7d/a7587d20-5c91-bd30-591b-b15c28d2563b/cover.jpg/400x400bb.jpg"
     }
   ]
 }
