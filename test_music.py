@@ -34,12 +34,12 @@ class MusicTest(unittest.TestCase):
         self.assertEqual(albums[0]['artist'], 'Canine')
         self.assertTrue(albums[0]['artwork'].endswith('/400x400bb.jpg'))
 
-    def test_deduplicates_within_last_twelve_tracks(self):
+    def test_preserves_repeated_albums_within_last_twelve_tracks(self):
         data = self.fixture()
         tracks = data['data'][0]['data']['sections'][0]['items']
         tracks.append(copy.deepcopy(tracks[0]))
         albums = update_music.parse_playlist(self.html(data))['albums']
-        self.assertEqual(len(albums), 1)
+        self.assertEqual(len(albums), len(tracks))
 
     def test_failed_or_empty_response_preserves_snapshot(self):
         data = self.fixture()

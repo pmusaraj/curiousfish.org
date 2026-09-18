@@ -13,6 +13,11 @@
   <script src="activity.js" defer></script>
 </head>
 <body class="avenir">
+  <button class="theme-toggle" type="button" hidden aria-label="Change color theme">
+    <svg class="theme-system" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+    <svg class="theme-light" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+    <svg class="theme-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>
+  </button>
   <main class="page">
     <header>
       <p class="brand">curiousfish.org / musaraj.com</p>
@@ -77,17 +82,15 @@
         <li><a href="https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533" aria-label="Labyrinthe — Feu! Chatterton"><span class="album-artist" aria-hidden="true">Feu! Chatterton</span><img src="https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/38/f4/55/38f45525-ca4a-c074-5477-9e68af0c979d/25UMGIM86506.rgb.jpg/400x400bb.jpg" alt="" width="160" height="160" loading="lazy"></a></li>
         <li><a href="https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214" aria-label="The Square (Original Soundtrack Album) — Bobby McFerrin"><span class="album-artist" aria-hidden="true">Bobby McFerrin</span><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4a/7e/41/4a7e418a-af14-538b-da16-7761c0e5a1da/886448178569.jpg/400x400bb.jpg" alt="" width="160" height="160" loading="lazy"></a></li>
         <li><a href="https://music.apple.com/ca/album/efuge-efuge/270909506" aria-label="...And All the Pieces Matter - Five Years of Music from the Wire — Various Artists"><span class="album-artist" aria-hidden="true">Various Artists</span><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/12/c8/fb/12c8fb0a-0858-21c7-8a06-943e678a8794/mzi.wkpcfoed.jpg/400x400bb.jpg" alt="" width="160" height="160" loading="lazy"></a></li>
+        <li><a href="https://music.apple.com/ca/album/ren%C3%A9/1500087282" aria-label="René - Single — Residente"><span class="album-artist" aria-hidden="true">Residente</span><img src="https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/f3/82/68/f3826888-d4ec-1104-e62f-f73f71c021fa/886448299189.jpg/400x400bb.jpg" alt="" width="160" height="160" loading="lazy"></a></li>
       </ul></div>
     </section>
-    <footer>
-      <div class="flags"><span role="img" aria-label="Albania">🇦🇱</span> <span role="img" aria-label="Canada">🇨🇦</span></div>
-      <button class="theme-toggle" type="button" hidden aria-label="Change color theme">
-        <svg class="theme-system" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        <svg class="theme-light" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
-        <svg class="theme-dark" aria-hidden="true" viewBox="0 0 24 24"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>
-      </button>
-    </footer>
   </main>
 
+  <script>
+    const strip = document.querySelector('.album-strip');
+    const firstAlbum = strip?.querySelector('img');
+    if (firstAlbum) strip.scrollLeft = firstAlbum.getBoundingClientRect().width / 2;
+  </script>
 </body>
 </html>

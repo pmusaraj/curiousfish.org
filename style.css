@@ -18,7 +18,7 @@ a { color: inherit; text-decoration: none; }
 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
 a:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
 p, h1, h2, ul { margin: 0; }
-.brand { color: var(--accent); font-size: 12px; margin-bottom: 38px; }
+.brand { color: var(--accent); font-size: 12px; margin-bottom: 38px; padding-right: 44px; }
 h1 { font-size: 32px; line-height: 1.15; font-weight: 500; letter-spacing: -1px; }
 .intro { margin-top: 14px; font-size: 17px; color: var(--muted); }
 .intro a { color: var(--accent); }
@@ -36,9 +36,7 @@ li { margin-bottom: 21px; }
 .project-icon, .socials img[src="images/social-github.png"] { filter: var(--icon-filter, none); }
 time { color: var(--muted); font-size: 11px; font-weight: 400; margin-left: 12px; white-space: nowrap; }
 .description { color: var(--muted); font-size: 13px; margin-top: 3px; max-width: 660px; }
-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
 .avenir { --font: 'Avenir Next', Avenir, 'Segoe UI', sans-serif; }
-.avenir footer { font-size: 20px; word-spacing: 6px; }
 @media (max-width: 600px) {
   .page { padding-top: 30px; }
   .brand { margin-bottom: 32px; }
@@ -53,8 +51,9 @@ footer { display: flex; align-items: center; justify-content: space-between; mar
 .rotation-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
 .rotation-heading h2 { margin: 0; }
 .rotation-heading > a { font-size: 11px; color: var(--muted); }
-.album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 24px 12px; overflow-x: auto; }
-.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 144px; gap: 24px; width: max-content; margin-inline: auto; text-align: center; }
+.album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 0 12px; overflow-x: auto; scrollbar-width: none; }
+.album-strip::-webkit-scrollbar { display: none; }
+.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 144px; gap: 24px; width: max-content; min-width: calc(100% + 72px); padding-right: 24px; text-align: center; }
 .albums li { margin: 0; min-width: 0; }
 .albums a { display: flex; flex-direction: column; height: 100%; }
 .albums a:hover, .rotation-heading > a:hover { color: inherit; text-decoration: none; opacity: 0.75; }
@@ -62,10 +61,11 @@ footer { display: flex; align-items: center; justify-content: space-between; mar
 .album-artist { display: flex; flex: 1; align-items: flex-end; justify-content: center; min-height: 2.8em; margin-bottom: 8px; color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; visibility: hidden; }
 .albums a:hover .album-artist, .albums a:focus-visible .album-artist { visibility: visible; }
 @media (max-width: 600px) {
-  .albums { grid-auto-columns: 120px; gap: 20px; }
+  .albums { grid-auto-columns: 120px; gap: 20px; min-width: calc(100% + 60px); }
 }
 .description a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .theme-toggle {
+  position: absolute; top: 16px; right: 16px; z-index: 1;
   width: 44px; height: 44px; padding: 12px;
   display: grid; place-items: center;
   color: var(--muted); background: var(--background);

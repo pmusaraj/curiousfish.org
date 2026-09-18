@@ -21,8 +21,9 @@ class PersonalSiteTest(unittest.TestCase):
         self.assertIn('id="rotation-title"', html)
         self.assertIn("## On rotation", md)
         self.assertIn("New &amp; Notable", html)
-        self.assertIn("🇦🇱", html)
-        self.assertIn("🇨🇦", html)
+        self.assertNotIn("🇦🇱", html + md)
+        self.assertNotIn("🇨🇦", html + md)
+        self.assertNotIn("<footer", html)
         self.assertIn('<script src="theme.js"></script>', html)
 
     def test_markdown_items_optional_fields_order_and_formatting(self):

@@ -101,10 +101,8 @@ Based in Montreal.
 
 {re.sub(r'^## ', '### ', source.strip(), flags=re.MULTILINE)}
 {music_md}
-
-🇦🇱 🇨🇦
 '''
-    return html, md
+    return html, md.rstrip() + "\n"
 
 
 def render_music(root: Path) -> tuple[str, str]:

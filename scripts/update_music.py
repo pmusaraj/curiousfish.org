@@ -56,7 +56,6 @@ def parse_playlist(html):
     if not tracks:
         raise ValueError("No public tracks found; keeping the previous albums")
     albums = []
-    seen = set()
     for track in tracks[-12:]:
         links = [(link, link.get("segue", {}).get("destination", {}).get("contentDescriptor", {}))
                  for link in track.get("tertiaryLinks", [])]
@@ -65,9 +64,6 @@ def parse_playlist(html):
             raise ValueError("A playlist track is missing album metadata")
         link, descriptor = match
         album_id = descriptor["identifiers"]["storeAdamID"]
-        if album_id in seen:
-            continue
-        seen.add(album_id)
         artwork = track["artwork"]["dictionary"]["url"]
         for key, value in {"w": "400", "h": "400", "f": "jpg", "c": "bb"}.items():
             artwork = artwork.replace("{" + key + "}", value)
