@@ -1,16 +1,28 @@
-name: Update profile stats
+name: Update profile stats and music
 
 on:
   workflow_dispatch:
   schedule:
-    # Daily at 08:00 UTC.
-    - cron: "0 8 * * *"
+    # Check daily; the job runs on alternating UTC dates (including month boundaries).
+    - cron: "17 8 * * *"
 
 permissions:
   contents: write
 
 jobs:
+  cadence:
+    runs-on: ubuntu-latest
+    outputs:
+      refresh: ${{ steps.check.outputs.refresh }}
+    steps:
+      - id: check
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ $(( $(date -u +%s) / 86400 % 2 )) -eq 0 ]; then
+            echo "refresh=true" >> "$GITHUB_OUTPUT"
+          fi
   update-stats:
+    needs: cadence
+    if: needs.cadence.outputs.refresh == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -21,14 +33,25 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Update profile stats and generated pages
         run: python scripts/update_stats.py
+      - name: Refresh public On rotation playlist
+        id: music
+        continue-on-error: true
+        run: python scripts/update_music.py
+      - name: Rebuild with latest available music
+        run: python scripts/build_site.py
       - name: Commit changes
         run: |
-          if git diff --quiet -- profile-stats.json index.html index.md; then
+          if git diff --quiet -- profile-stats.json on-rotation.json index.html index.md; then
             echo "No stats changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile-stats.json index.html index.md
-          git commit -m "Update profile stats"
+          git add profile-stats.json on-rotation.json index.html index.md
+          git commit -m "Update profile stats and music"
           git push
+      - name: Report music refresh failure
+        if: steps.music.outcome == 'failure'
+        run: |
+          echo "Music refresh failed; the site retained its previous album data."
+          exit 1

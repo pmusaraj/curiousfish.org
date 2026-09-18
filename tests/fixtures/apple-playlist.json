@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "intent": {
+        "$kind": "PlaylistDetailPageIntent",
+        "contentDescriptor": {
+          "kind": "playlist",
+          "identifiers": {
+            "storeAdamID": "pl.u-38oW9zeIRrvzg"
+          },
+          "locale": {
+            "storefront": "ca",
+            "language": null
+          }
+        },
+        "prominentItemIdentifier": null
+      },
+      "data": {
+        "sections": [
+          {
+            "itemKind": "trackLockup",
+            "items": [
+              {
+                "tertiaryLinks": [
+                  {
+                    "title": "Liminal",
+                    "segue": {
+                      "destination": {
+                        "contentDescriptor": {
+                          "kind": "album",
+                          "identifiers": {
+                            "storeAdamID": "6802713645"
+                          },
+                          "url": "https://music.apple.com/ca/album/beast/6802713645",
+                          "locale": {
+                            "storefront": "ca",
+                            "language": null
+                          }
+                        }
+                      }
+                    }
+                  }
+                ],
+                "artwork": {
+                  "dictionary": {
+                    "bgColor": "63665e",
+                    "hasP3": false,
+                    "height": 3000,
+                    "textColor1": "f7f7f6",
+                    "textColor2": "efefee",
+                    "textColor3": "d9dad8",
+                    "textColor4": "d3d4d2",
+                    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/81/47/3b/81473b98-b113-e513-ceb7-1042306662fe/820233638920.jpg/{w}x{h}bb.{f}",
+                    "width": 3000
+                  }
+                },
+                "artistName": "Canine"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

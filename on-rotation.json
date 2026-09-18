@@ -1,0 +1,47 @@
+{
+  "playlist_url": "https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg",
+  "albums": [
+    {
+      "id": "6802713645",
+      "title": "Liminal",
+      "artist": "Canine",
+      "url": "https://music.apple.com/ca/album/beast/6802713645",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/81/47/3b/81473b98-b113-e513-ceb7-1042306662fe/820233638920.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "589348907",
+      "title": "Al Final de Este Viaje...",
+      "artist": "Silvio Rodríguez",
+      "url": "https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/cb/90/06/cb90066e-90a8-f921-3f06-52a3087d4342/dj.swhhwots.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1774040006",
+      "title": "Todos los días todo el día",
+      "artist": "LATIN MAFIA",
+      "url": "https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/38/67/e13867af-7a6b-032c-16f6-9a3b231fc14d/198846619569.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1822196981",
+      "title": "Couleur Compas Vol. 3",
+      "artist": "Ti Kabzy",
+      "url": "https://music.apple.com/ca/album/relax/1822196981",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/86/08/24/860824c5-1666-7062-5690-5fec2ad9330b/199538126730.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1494342960",
+      "title": "Immensità - EP",
+      "artist": "Andrea Laszlo De Simone",
+      "url": "https://music.apple.com/ca/album/conchiglie/1494342960",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/6c/61/65/6c61658f-bb01-5c29-130c-0a36b426f29a/19UM1IM13917.rgb.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1593832914",
+      "title": "Hymne au soleil",
+      "artist": "Laurent Bardainne & Tigre d'Eau Douce",
+      "url": "https://music.apple.com/ca/album/oh-yeah/1593832914",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/27/b2/83/27b283ec-0ea7-4c51-2317-c1e8d6bd1585/3663729181619_cover.jpg/400x400bb.jpg"
+    }
+  ]
+}

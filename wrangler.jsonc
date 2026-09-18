@@ -25,6 +25,7 @@
     "watch_dir": [
       "notable.md",
       "profile-stats.json",
+      "on-rotation.json",
       "templates",
       "scripts/build_site.py"
     ]

@@ -7,8 +7,8 @@ Engineering manager at [Discourse](https://www.discourse.org).
 Based in Montreal.
 
 - [GitHub](https://github.com/pmusaraj) — last activity: today
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: yesterday
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: today
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 2 days ago
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: yesterday
 
 ## New & Notable
 
@@ -61,5 +61,17 @@ Generates theme components replacing Font Awesome with other icon sets. Was pret
 ### [Peshku pa ujê](https://peshkupauje.com)
 
 An early community blog for Albanians, was a hit for a few years in the 2010s, now preserved as a static HTML archive.
+
+## On rotation
+
+- [Liminal](<https://music.apple.com/ca/album/beast/6802713645>) — Canine
+- [Al Final de Este Viaje...](<https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907>) — Silvio Rodríguez
+- [Todos los días todo el día](<https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006>) — LATIN MAFIA
+- [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
+- [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
+- [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
+
+[Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)
+
 
 🇦🇱 🇨🇦

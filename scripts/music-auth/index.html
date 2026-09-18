@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple Music setup</title>
+<style>
+  :root { color-scheme: light dark; font: 16px/1.5 system-ui, sans-serif; }
+  body { max-width: 560px; margin: 48px auto; padding: 0 24px; }
+  label { display: block; margin: 18px 0; }
+  input, textarea { display: block; box-sizing: border-box; width: 100%; margin-top: 6px; padding: 10px; font: inherit; }
+  button { padding: 10px 16px; font: inherit; cursor: pointer; }
+  button:disabled { cursor: default; }
+  textarea { font: 13px/1.5 monospace; overflow-wrap: anywhere; }
+  #status { min-height: 3em; }
+</style>
+<h1>Apple Music setup</h1>
+<p>Create a user token for your GitHub Action. Your private key is used in this browser to sign a short-lived developer token. It is not uploaded or saved by this tool.</p>
+<form id="setup" autocomplete="off">
+  <label>Team ID<input id="team" required pattern="[A-Z0-9]{10}" maxlength="10" spellcheck="false" autocomplete="off"></label>
+  <label>Key ID<input id="key" required pattern="[A-Z0-9]{10}" maxlength="10" spellcheck="false" autocomplete="off"></label>
+  <label>Private key (.p8)<input id="private-key" type="file" accept=".p8"></label>
+  <details><summary>Or paste the private key</summary>
+    <label>Complete .p8 contents<textarea id="private-key-text" rows="6" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="-----BEGIN PRIVATE KEY-----"></textarea></label>
+    <p>Pasted text takes precedence over the selected file and is cleared after signing.</p>
+  </details>
+  <button id="prepare">Prepare sign-in</button>
+</form>
+<p><button id="signin" hidden>Sign in with Apple Music</button></p>
+<p id="status" role="status" aria-live="polite"></p>
+<p id="help" hidden>If Apple only offers “Try Apple Music”, open <a href="https://music.apple.com/" target="_blank" rel="noopener noreferrer">Apple Music on the web</a> in this browser and confirm you can sign in and play a full song with your subscription. Then close the authorization window and retry here. Allow pop-ups for this local page.</p>
+<p><small id="diagnostic"></small></p>
+<section id="result" hidden>
+  <h2>Your Music User Token</h2>
+  <p>Save this value in your repository under Settings → Secrets and variables → Actions → New repository secret, named <code>APPLE_MUSIC_USER_TOKEN</code>.</p>
+  <label>Token<textarea id="token" rows="5" readonly spellcheck="false" autocomplete="off"></textarea></label>
+  <button id="copy">Copy token</button>
+  <p>Close this page when finished. MusicKit may remember your authorization in this browser.</p>
+</section>
+<script type="module">
+  import { developerToken, SetupError } from './token.mjs';
+  const $ = id => document.getElementById(id);
+  let music;
+  let sdk;
+  function readKeyFile(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result);
+      reader.onerror = () => reject(new SetupError('Safari could not read the selected file. Try the paste-key option with the complete .p8 contents.'));
+      reader.onabort = () => reject(new SetupError('Reading the file was cancelled. Select it again or paste the key.'));
+      reader.readAsText(file);
+    });
+  }
+  function errorLabel(error) {
+    // Do not display arbitrary SDK error objects: they can contain credentials.
+    const name = typeof error?.name === 'string' && /^[A-Z_]{3,60}$/.test(error.name) ? error.name : 'Error';
+    return name;
+  }
+  async function checkDeveloperToken(token) {
+    let response;
+    try {
+      response = await fetch('https://api.music.apple.com/v1/test', {
+        headers: { Authorization: `Bearer ${token}` },
+        signal: AbortSignal.timeout(15000),
+      });
+    } catch {
+      throw new Error('Apple’s API could not be reached. Check your connection or browser content blocker.');
+    }
+    if (!response.ok) {
+      throw new Error(`Apple’s developer-token check returned HTTP ${response.status}. Check the Team ID, Key ID, and that the key has MusicKit enabled.`);
+    }
+  }
+  function loadMusicKit() {
+    if (window.MusicKit) return Promise.resolve();
+    if (sdk) return sdk;
+    sdk = new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      const timeout = setTimeout(() => reject(new Error('MusicKit did not load. Check your connection and reload this page.')), 20000);
+      document.addEventListener('musickitloaded', () => { clearTimeout(timeout); resolve(); }, { once: true });
+      script.src = 'https://js-cdn.music.apple.com/musickit/v3/musickit.js';
+      script.onerror = () => { clearTimeout(timeout); reject(new Error('Could not load MusicKit. Reload and try again.')); };
+      document.head.append(script);
+    });
+    return sdk;
+  }
+  $('setup').addEventListener('submit', async event => {
+    event.preventDefault();
+    $('prepare').disabled = true;
+    $('signin').hidden = true;
+    $('result').hidden = true;
+    $('token').value = '';
+    $('help').hidden = true;
+    $('diagnostic').textContent = '';
+    $('status').textContent = 'Preparing Apple Music sign-in…';
+    let stage = 'key';
+    try {
+      let pem = $('private-key-text').value.trim();
+      if (!pem) {
+        const file = $('private-key').files[0];
+        if (!file) throw new SetupError('Select a .p8 file or paste the complete private key.');
+        pem = await readKeyFile(file);
+      }
+      const token = await developerToken($('team').value.trim(), $('key').value.trim(), pem);
+      pem = '';
+      $('private-key').value = '';
+      $('private-key-text').value = '';
+      stage = 'validation';
+      $('status').textContent = 'Checking the developer credentials with Apple…';
+      await checkDeveloperToken(token);
+      $('diagnostic').textContent = 'Developer credentials accepted by Apple.';
+      stage = 'sdk';
+      await loadMusicKit();
+      await MusicKit.configure({ developerToken: token, app: { name: 'Curious Fish Music', build: '1.0' } });
+      music = MusicKit.getInstance();
+      $('signin').hidden = false;
+      $('status').textContent = 'Ready. Sign in with the Apple Account you use for Apple Music.';
+    } catch (error) {
+      $('status').textContent = error instanceof SetupError || stage === 'validation' ? error.message :
+        stage === 'key' ? 'Could not read the key. Check both IDs and select a valid Apple .p8 key.' :
+        `MusicKit could not initialize (${errorLabel(error)}). Reload the page and check your connection.`;
+    } finally { $('prepare').disabled = false; }
+  });
+  $('signin').addEventListener('click', async () => {
+    $('signin').disabled = true;
+    $('prepare').disabled = true;
+    $('status').textContent = 'Complete the Apple authorization window…';
+    const reminder = setTimeout(() => {
+      $('status').textContent = 'Still waiting for Apple to return authorization. If the window only shows a promotion, follow the troubleshooting step below. Close that window to cancel and retry.';
+      $('help').hidden = false;
+    }, 30000);
+    try {
+      const token = await music.authorize() || music.musicUserToken;
+      if (!token) throw new Error('No token');
+      $('token').value = token;
+      $('result').hidden = false;
+      $('status').textContent = 'Authorized. Your token is ready to copy.';
+    } catch (error) {
+      $('status').textContent = `Apple authorization did not complete (${errorLabel(error)}). Your developer credentials passed validation, but Apple did not return a usable user token.`;
+      $('help').hidden = false;
+    } finally {
+      clearTimeout(reminder);
+      $('signin').disabled = false;
+      $('prepare').disabled = false;
+    }
+  });
+  $('copy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText($('token').value);
+      $('status').textContent = 'Copied. Save it as the APPLE_MUSIC_USER_TOKEN GitHub secret.';
+    } catch {
+      $('token').focus(); $('token').select();
+      $('status').textContent = 'Copy the selected token manually.';
+    }
+  });
+</script>
+</html>

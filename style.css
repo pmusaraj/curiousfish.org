@@ -12,7 +12,7 @@
   --background: #141c28; --ink: #dce6f5; --muted: #a0aec3;
   --accent: #91b4ff; --line: #303e52; --icon-filter: invert(0.9);
 }
-body { margin: 0; background: var(--background); color: var(--ink); font: 15px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
+body { margin: 0; overflow-x: clip; background: var(--background); color: var(--ink); font: 15px/1.6 var(--font); -webkit-font-smoothing: antialiased; }
 .page { width: min(580px, calc(100% - 48px)); margin: 0 auto; padding: 48px 0 32px; }
 a { color: inherit; text-decoration: none; }
 a:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 4px; }
@@ -50,6 +50,21 @@ footer { display: flex; align-items: center; justify-content: space-between; mar
   time { display: inline-block; }
 }
 .description p + p { margin-top: 8px; }
+.rotation-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
+.rotation-heading h2 { margin: 0; }
+.rotation-heading > a { font-size: 11px; color: var(--muted); }
+.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 180px; gap: 24px; width: max-content; position: relative; left: 50%; transform: translateX(-50%); text-align: center; }
+.albums li { margin: 0; min-width: 0; }
+.albums a { display: block; }
+.albums a:hover, .rotation-heading > a:hover { color: inherit; text-decoration: none; opacity: 0.75; }
+.albums img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 50%; background: var(--line); }
+.album-title, .album-artist { display: block; overflow-wrap: anywhere; }
+.album-title { margin-top: 12px; font-size: 13px; font-weight: 500; line-height: 1.4; }
+.album-artist { margin-top: 2px; color: var(--muted); font-size: 12px; }
+@media (max-width: 600px) {
+  .album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 24px 12px; overflow-x: auto; }
+  .albums { grid-auto-columns: 150px; gap: 20px; left: auto; transform: none; margin-inline: auto; }
+}
 .description a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .theme-toggle {
   width: 44px; height: 44px; padding: 12px;

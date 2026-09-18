@@ -82,6 +82,8 @@ def render_site(root: Path = ROOT) -> tuple[str, str]:
     substitutions = {f"{profile}_activity": activity_html(stats.get(f"{profile}_last_activity"), label)
                      for profile, label in values.items()}
     substitutions["notable_items"] = render_items(source)
+    music_html, music_md = render_music(root)
+    substitutions["on_rotation"] = music_html
     html = re.sub(r"{{ (\w+) }}", lambda match: substitutions[match[1]], template)
     md = f'''# Penar Musaraj
 
@@ -98,9 +100,39 @@ Based in Montreal.
 ## New & Notable
 
 {re.sub(r'^## ', '### ', source.strip(), flags=re.MULTILINE)}
+{music_md}
 
 🇦🇱 🇨🇦
 '''
+    return html, md
+
+
+def render_music(root: Path) -> tuple[str, str]:
+    path = root / "on-rotation.json"
+    if not path.exists():
+        return "", ""
+    music = json.loads(path.read_text())
+    if not music["albums"]:
+        return "", ""
+    from update_music import public_url
+    playlist = public_url(music["playlist_url"])
+    cards, lines = [], []
+    for album in music["albums"][:6]:
+        url = public_url(album["url"])
+        artwork = public_url(album["artwork"], artwork=True)
+        title, artist = escape(album["title"]), escape(album["artist"])
+        cards.append(f'        <li><a href="{escape(url, quote=True)}">'
+                     f'<img src="{escape(artwork, quote=True)}" alt="" width="160" height="160" loading="lazy">'
+                     f'<span class="album-title">{title}</span><span class="album-artist">{artist}</span></a></li>')
+        # Escape remote text so it cannot introduce Markdown links or HTML.
+        def md_text(value):
+            return re.sub(r'([\\`*_{}\[\]()#!|])', r'\\\1', escape(value).replace("\n", " "))
+        lines.append(f'- [{md_text(album["title"])}](<{url}>) — {md_text(album["artist"])}')
+    html = ('    <section aria-labelledby="rotation-title">\n'
+            '      <div class="rotation-heading"><h2 id="rotation-title">On rotation</h2>'
+            f'<a href="{escape(playlist, quote=True)}">Listen on Apple Music ↗</a></div>\n'
+            '      <div class="album-strip"><ul class="albums">\n' + '\n'.join(cards) + '\n      </ul></div>\n    </section>')
+    md = '\n## On rotation\n\n' + '\n'.join(lines) + f'\n\n[Listen on Apple Music]({playlist})\n'
     return html, md
 
 
