@@ -2,27 +2,6 @@
   "playlist_url": "https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg",
   "albums": [
     {
-      "id": "6802713645",
-      "title": "Liminal",
-      "artist": "Canine",
-      "url": "https://music.apple.com/ca/album/beast/6802713645",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/81/47/3b/81473b98-b113-e513-ceb7-1042306662fe/820233638920.jpg/400x400bb.jpg"
-    },
-    {
-      "id": "589348907",
-      "title": "Al Final de Este Viaje...",
-      "artist": "Silvio Rodríguez",
-      "url": "https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/cb/90/06/cb90066e-90a8-f921-3f06-52a3087d4342/dj.swhhwots.jpg/400x400bb.jpg"
-    },
-    {
-      "id": "1774040006",
-      "title": "Todos los días todo el día",
-      "artist": "LATIN MAFIA",
-      "url": "https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006",
-      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/38/67/e13867af-7a6b-032c-16f6-9a3b231fc14d/198846619569.jpg/400x400bb.jpg"
-    },
-    {
       "id": "1822196981",
       "title": "Couleur Compas Vol. 3",
       "artist": "Ti Kabzy",
@@ -84,6 +63,27 @@
       "artist": "Odezenne",
       "url": "https://music.apple.com/ca/album/svengo/1598123228",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/a7/58/7d/a7587d20-5c91-bd30-591b-b15c28d2563b/cover.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1715054569",
+      "title": "Horizon Unlimited - EP",
+      "artist": "The Lijadu Sisters",
+      "url": "https://music.apple.com/ca/album/come-on-home/1715054569",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ab/40/6d/ab406d9f-57f4-4448-1adf-26da1ffd2711/49059.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "685585931",
+      "title": "Combat Rock",
+      "artist": "The Clash",
+      "url": "https://music.apple.com/ca/album/straight-to-hell/685585931",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/71/b6/8a/71b68ab0-f2d7-5cf0-636c-c27de6ce8aed/886443520707.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1138421029",
+      "title": "Vers les ourses polaires - EP",
+      "artist": "Tim Dup",
+      "url": "https://music.apple.com/ca/album/cours-cours-et-cours-encore/1138421029",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/94/09/a0/9409a00d-6616-7a9e-6b9c-a5f1779270d7/886445943696.jpg/400x400bb.jpg"
     }
   ]
 }
