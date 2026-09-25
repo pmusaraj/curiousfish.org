@@ -64,17 +64,17 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
-- [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
-- [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
-- [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
-- [Labyrinthe](<https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533>) — Feu\! Chatterton
-- [The Square \(Original Soundtrack Album\)](<https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214>) — Bobby McFerrin
-- [...And All the Pieces Matter - Five Years of Music from the Wire](<https://music.apple.com/ca/album/efuge-efuge/270909506>) — Various Artists
-- [René - Single](<https://music.apple.com/ca/album/ren%C3%A9/1500087282>) — Residente
-- [Diwan 2](<https://music.apple.com/ca/album/ecoute-moi-camarade/1442522147>) — Rachid Taha
-- [1200 mètres en tout](<https://music.apple.com/ca/album/svengo/1598123228>) — Odezenne
-- [Horizon Unlimited - EP](<https://music.apple.com/ca/album/come-on-home/1715054569>) — The Lijadu Sisters
-- [Combat Rock](<https://music.apple.com/ca/album/straight-to-hell/685585931>) — The Clash
 - [Vers les ourses polaires - EP](<https://music.apple.com/ca/album/cours-cours-et-cours-encore/1138421029>) — Tim Dup
+- [Combat Rock](<https://music.apple.com/ca/album/straight-to-hell/685585931>) — The Clash
+- [Horizon Unlimited - EP](<https://music.apple.com/ca/album/come-on-home/1715054569>) — The Lijadu Sisters
+- [1200 mètres en tout](<https://music.apple.com/ca/album/svengo/1598123228>) — Odezenne
+- [Diwan 2](<https://music.apple.com/ca/album/ecoute-moi-camarade/1442522147>) — Rachid Taha
+- [René - Single](<https://music.apple.com/ca/album/ren%C3%A9/1500087282>) — Residente
+- [...And All the Pieces Matter - Five Years of Music from the Wire](<https://music.apple.com/ca/album/efuge-efuge/270909506>) — Various Artists
+- [The Square \(Original Soundtrack Album\)](<https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214>) — Bobby McFerrin
+- [Labyrinthe](<https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533>) — Feu\! Chatterton
+- [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
+- [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
+- [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)

@@ -115,7 +115,7 @@ def render_music(root: Path) -> tuple[str, str]:
     from update_music import public_url
     playlist = public_url(music["playlist_url"])
     cards, lines = [], []
-    for album in music["albums"][:12]:
+    for album in reversed(music["albums"][:12]):
         url = public_url(album["url"])
         artwork = public_url(album["artwork"], artwork=True)
         title, artist = escape(album["title"]), escape(album["artist"])

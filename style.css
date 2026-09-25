@@ -48,12 +48,14 @@ time { color: var(--muted); font-size: 11px; font-weight: 400; margin-left: 12px
   time { display: inline-block; }
 }
 .description p + p { margin-top: 8px; }
+.page:has(.album-strip) { padding-bottom: 0; }
+section[aria-labelledby="rotation-title"] { margin-top: 64px; }
 .rotation-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; margin-bottom: 18px; }
 .rotation-heading h2 { margin: 0; }
 .rotation-heading > a { font-size: 11px; color: var(--muted); }
-.album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 0 12px; overflow-x: auto; scrollbar-width: none; }
+.album-strip { width: 100vw; margin-left: calc(50% - 50vw); padding: 6px 0 0; margin-bottom: -20px; clip-path: inset(0 0 20px); overflow-x: auto; scrollbar-width: none; }
 .album-strip::-webkit-scrollbar { display: none; }
-.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 144px; gap: 24px; width: max-content; min-width: calc(100% + 72px); padding-right: 24px; text-align: center; }
+.albums { display: grid; grid-auto-flow: column; grid-auto-columns: 122.4px; gap: 24px; width: max-content; min-width: calc(100% + 72px); padding-right: 24px; text-align: center; }
 .albums li { margin: 0; min-width: 0; }
 .albums a { display: flex; flex-direction: column; height: 100%; }
 .albums a:hover, .rotation-heading > a:hover { color: inherit; text-decoration: none; opacity: 0.75; }
@@ -61,7 +63,8 @@ time { color: var(--muted); font-size: 11px; font-weight: 400; margin-left: 12px
 .album-artist { display: flex; flex: 1; align-items: flex-end; justify-content: center; min-height: 2.8em; margin-bottom: 8px; color: var(--muted); font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; visibility: hidden; }
 .albums a:hover .album-artist, .albums a:focus-visible .album-artist { visibility: visible; }
 @media (max-width: 600px) {
-  .albums { grid-auto-columns: 120px; gap: 20px; min-width: calc(100% + 60px); }
+  section[aria-labelledby="rotation-title"] { margin-top: 52px; }
+  .albums { grid-auto-columns: 102px; gap: 20px; min-width: calc(100% + 60px); }
 }
 .description a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .theme-toggle {
