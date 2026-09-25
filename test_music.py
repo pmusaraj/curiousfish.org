@@ -19,7 +19,7 @@ class MusicTest(unittest.TestCase):
     def html(self, data):
         return '<script id="serialized-server-data" type="application/json">' + json.dumps(data) + '</script>'
 
-    def test_selects_last_twelve_tracks_in_playlist_order(self):
+    def test_preserves_all_tracks_and_renders_in_reverse_order(self):
         data = self.fixture()
         tracks = data['data'][0]['data']['sections'][0]['items']
         original = copy.deepcopy(tracks[0])
@@ -30,11 +30,33 @@ class MusicTest(unittest.TestCase):
             track['tertiaryLinks'][0]['segue']['destination']['contentDescriptor']['identifiers']['storeAdamID'] = str(i)
             tracks.append(track)
         albums = update_music.parse_playlist(self.html(data))['albums']
-        self.assertEqual([a['title'] for a in albums], [f'Album {i}' for i in range(4, 16)])
+        expected = [track['tertiaryLinks'][0]['title'] for track in tracks]
+        self.assertEqual([a['title'] for a in albums], expected)
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'on-rotation.json').write_text(json.dumps({
+                'playlist_url': update_music.PLAYLIST_URL, 'albums': albums,
+            }))
+            html, md = render_music(root)
+            from html.parser import HTMLParser
+
+            class Cards(HTMLParser):
+                titles = []
+
+                def handle_starttag(self, tag, attrs):
+                    label = dict(attrs).get('aria-label')
+                    if tag == 'a' and label:
+                        self.titles.append(label.split(' — ')[0])
+
+            cards = Cards()
+            cards.feed(html)
+            self.assertEqual(cards.titles, list(reversed(expected)))
+            md_titles = [line.split('](')[0][3:] for line in md.splitlines() if line.startswith('- [')]
+            self.assertEqual(md_titles, list(reversed(expected)))
         self.assertEqual(albums[0]['artist'], 'Canine')
         self.assertTrue(albums[0]['artwork'].endswith('/400x400bb.jpg'))
 
-    def test_preserves_repeated_albums_within_last_twelve_tracks(self):
+    def test_preserves_repeated_albums(self):
         data = self.fixture()
         tracks = data['data'][0]['data']['sections'][0]['items']
         tracks.append(copy.deepcopy(tracks[0]))

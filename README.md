@@ -56,7 +56,7 @@ Only public assets are uploaded; source files are excluded by `.assetsignore`.
 
 ## On rotation
 
-The homepage shows album artwork for the last 12 tracks of the public
+The homepage shows album artwork for all tracks available on the public
 [On Rotation playlist](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg),
 in reverse playlist order (newest additions first), including repeated albums. Add songs or albums to the end of that playlist to feature them. This is a curated selection, not automatic listening history.
 

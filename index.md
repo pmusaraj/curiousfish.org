@@ -64,6 +64,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
+- [The Impossible Bird](<https://music.apple.com/ca/album/the-beast-in-me/385922317>) — Nick Lowe
 - [Vers les ourses polaires - EP](<https://music.apple.com/ca/album/cours-cours-et-cours-encore/1138421029>) — Tim Dup
 - [Combat Rock](<https://music.apple.com/ca/album/straight-to-hell/685585931>) — The Clash
 - [Horizon Unlimited - EP](<https://music.apple.com/ca/album/come-on-home/1715054569>) — The Lijadu Sisters
@@ -76,5 +77,8 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 - [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
 - [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
 - [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
+- [Todos los días todo el día](<https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006>) — LATIN MAFIA
+- [Al Final de Este Viaje...](<https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907>) — Silvio Rodríguez
+- [Liminal](<https://music.apple.com/ca/album/beast/6802713645>) — Canine
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)

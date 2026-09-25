@@ -56,7 +56,7 @@ def parse_playlist(html):
     if not tracks:
         raise ValueError("No public tracks found; keeping the previous albums")
     albums = []
-    for track in tracks[-12:]:
+    for track in tracks:
         links = [(link, link.get("segue", {}).get("destination", {}).get("contentDescriptor", {}))
                  for link in track.get("tertiaryLinks", [])]
         match = next(((link, desc) for link, desc in links if desc.get("kind") == "album"), None)

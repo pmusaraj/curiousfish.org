@@ -2,6 +2,27 @@
   "playlist_url": "https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg",
   "albums": [
     {
+      "id": "6802713645",
+      "title": "Liminal",
+      "artist": "Canine",
+      "url": "https://music.apple.com/ca/album/beast/6802713645",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/81/47/3b/81473b98-b113-e513-ceb7-1042306662fe/820233638920.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "589348907",
+      "title": "Al Final de Este Viaje...",
+      "artist": "Silvio Rodríguez",
+      "url": "https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Features124/v4/cb/90/06/cb90066e-90a8-f921-3f06-52a3087d4342/dj.swhhwots.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1774040006",
+      "title": "Todos los días todo el día",
+      "artist": "LATIN MAFIA",
+      "url": "https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/e1/38/67/e13867af-7a6b-032c-16f6-9a3b231fc14d/198846619569.jpg/400x400bb.jpg"
+    },
+    {
       "id": "1822196981",
       "title": "Couleur Compas Vol. 3",
       "artist": "Ti Kabzy",
@@ -84,6 +105,13 @@
       "artist": "Tim Dup",
       "url": "https://music.apple.com/ca/album/cours-cours-et-cours-encore/1138421029",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/94/09/a0/9409a00d-6616-7a9e-6b9c-a5f1779270d7/886445943696.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "385922317",
+      "title": "The Impossible Bird",
+      "artist": "Nick Lowe",
+      "url": "https://music.apple.com/ca/album/the-beast-in-me/385922317",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2c/55/de/2c55debf-550f-3ba4-b1a4-73ebd49a259c/45096.jpg/400x400bb.jpg"
     }
   ]
 }
