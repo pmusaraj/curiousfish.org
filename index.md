@@ -6,9 +6,9 @@ Engineering manager at [Discourse](https://www.discourse.org).
 
 Based in Montreal.
 
-- [GitHub](https://github.com/pmusaraj) — last activity: yesterday
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 3 days ago
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 2 days ago
+- [GitHub](https://github.com/pmusaraj) — last activity: today
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 5 days ago
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: today
 
 ## New & Notable
 
@@ -64,6 +64,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
+- [My Nirvana](<https://music.apple.com/ca/album/smells-like-teen-spirit/1651971171>) — Redi Hasa
 - [The Impossible Bird](<https://music.apple.com/ca/album/the-beast-in-me/385922317>) — Nick Lowe
 - [Vers les ourses polaires - EP](<https://music.apple.com/ca/album/cours-cours-et-cours-encore/1138421029>) — Tim Dup
 - [Combat Rock](<https://music.apple.com/ca/album/straight-to-hell/685585931>) — The Clash
