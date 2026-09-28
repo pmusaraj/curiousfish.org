@@ -6,9 +6,9 @@ Engineering manager at [Discourse](https://www.discourse.org).
 
 Based in Montreal.
 
-- [GitHub](https://github.com/pmusaraj) — last activity: today
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 5 days ago
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: today
+- [GitHub](https://github.com/pmusaraj) — last activity: yesterday
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 7 days ago
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 2 days ago
 
 ## New & Notable
 
@@ -72,14 +72,12 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 - [1200 mètres en tout](<https://music.apple.com/ca/album/svengo/1598123228>) — Odezenne
 - [Diwan 2](<https://music.apple.com/ca/album/ecoute-moi-camarade/1442522147>) — Rachid Taha
 - [René - Single](<https://music.apple.com/ca/album/ren%C3%A9/1500087282>) — Residente
-- [...And All the Pieces Matter - Five Years of Music from the Wire](<https://music.apple.com/ca/album/efuge-efuge/270909506>) — Various Artists
 - [The Square \(Original Soundtrack Album\)](<https://music.apple.com/ca/album/improvisaci%C3%B3-1/1522753214>) — Bobby McFerrin
 - [Labyrinthe](<https://music.apple.com/ca/album/%C3%A0-cause-ou-gr%C3%A2ce/1822258533>) — Feu\! Chatterton
 - [Hymne au soleil](<https://music.apple.com/ca/album/oh-yeah/1593832914>) — Laurent Bardainne &amp; Tigre d&\#x27;Eau Douce
 - [Immensità - EP](<https://music.apple.com/ca/album/conchiglie/1494342960>) — Andrea Laszlo De Simone
 - [Couleur Compas Vol. 3](<https://music.apple.com/ca/album/relax/1822196981>) — Ti Kabzy
 - [Todos los días todo el día](<https://music.apple.com/ca/album/sentado-aqu%C3%AD/1774040006>) — LATIN MAFIA
-- [Al Final de Este Viaje...](<https://music.apple.com/ca/album/%C3%B3leo-de-mujer-con-sombrero/589348907>) — Silvio Rodríguez
 - [Liminal](<https://music.apple.com/ca/album/beast/6802713645>) — Canine
 
 [Listen on Apple Music](https://music.apple.com/ca/playlist/on-rotation/pl.u-38oW9zeIRrvzg)
