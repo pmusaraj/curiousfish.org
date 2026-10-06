@@ -7,8 +7,8 @@ Engineering manager at [Discourse](https://www.discourse.org).
 Based in Montreal.
 
 - [GitHub](https://github.com/pmusaraj) — last activity: today
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: today
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 8 days ago
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 2 days ago
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 10 days ago
 
 ## New & Notable
 
