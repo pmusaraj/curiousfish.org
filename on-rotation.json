@@ -112,6 +112,13 @@
       "artist": "Lauryn Hill",
       "url": "https://music.apple.com/ca/album/everything-is-everything/1276760743",
       "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/6b/55/096b55c4-ee8f-23bd-df8f-0ca0821f3028/886446727189.jpg/400x400bb.jpg"
+    },
+    {
+      "id": "1440822546",
+      "title": "A Treasury",
+      "artist": "Nick Drake",
+      "url": "https://music.apple.com/ca/album/cello-song/1440822546",
+      "artwork": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/09/0a/de/090adef8-d0f6-6681-a8b4-f33aa52c2c5c/00602537415816.rgb.jpg/400x400bb.jpg"
     }
   ]
 }
