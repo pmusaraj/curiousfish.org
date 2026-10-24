@@ -7,7 +7,7 @@ Engineering manager at [Discourse](https://www.discourse.org).
 Based in Montreal.
 
 - [GitHub](https://github.com/pmusaraj) — last activity: yesterday
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: 2 days ago
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: yesterday
 - [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: yesterday
 
 ## New & Notable
@@ -64,6 +64,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
+- [MOTOMAMI](<https://music.apple.com/ca/album/delirio-de-grandeza/1607918350>) — ROSALÍA
 - [A Treasury](<https://music.apple.com/ca/album/cello-song/1440822546>) — Nick Drake
 - [The Miseducation of Lauryn Hill](<https://music.apple.com/ca/album/everything-is-everything/1276760743>) — Lauryn Hill
 - [My Nirvana](<https://music.apple.com/ca/album/smells-like-teen-spirit/1651971171>) — Redi Hasa
