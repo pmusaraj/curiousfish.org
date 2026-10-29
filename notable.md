@@ -1,3 +1,9 @@
+## [theforumindex.com](https://theforumindex.com)
+
+2026
+
+A forum reader and discovery app for iOS and Android. Currently in beta.
+
 ## [heywhatson.tv](https://heywhatson.tv)
 
 2026
