@@ -6,9 +6,9 @@ Engineering manager at [Discourse](https://www.discourse.org).
 
 Based in Montreal.
 
-- [GitHub](https://github.com/pmusaraj) — last activity: today
+- [GitHub](https://github.com/pmusaraj) — last activity: yesterday
 - [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: yesterday
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 3 days ago
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: yesterday
 
 ## New & Notable
 
@@ -70,6 +70,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
+- [Le Tigre](<https://music.apple.com/ca/album/deceptacon/1450117595>) — Le Tigre
 - [MOTOMAMI](<https://music.apple.com/ca/album/delirio-de-grandeza/1607918350>) — ROSALÍA
 - [A Treasury](<https://music.apple.com/ca/album/cello-song/1440822546>) — Nick Drake
 - [The Miseducation of Lauryn Hill](<https://music.apple.com/ca/album/everything-is-everything/1276760743>) — Lauryn Hill
