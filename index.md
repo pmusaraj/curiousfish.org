@@ -6,9 +6,9 @@ Engineering manager at [Discourse](https://www.discourse.org).
 
 Based in Montreal.
 
-- [GitHub](https://github.com/pmusaraj) — last activity: yesterday
-- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: yesterday
-- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: yesterday
+- [GitHub](https://github.com/pmusaraj) — last activity: today
+- [Bluesky](https://bsky.app/profile/musaraj.com) — last activity: today
+- [Discourse Meta](https://meta.discourse.org/u/pmusaraj) — last activity: 3 days ago
 
 ## New & Notable
 
@@ -70,6 +70,7 @@ An early community blog for Albanians, was a hit for a few years in the 2010s, n
 
 ## On rotation
 
+- [Sleep Well Beast](<https://music.apple.com/ca/album/dark-side-of-the-gym/1233837225>) — The National
 - [Le Tigre](<https://music.apple.com/ca/album/deceptacon/1450117595>) — Le Tigre
 - [MOTOMAMI](<https://music.apple.com/ca/album/delirio-de-grandeza/1607918350>) — ROSALÍA
 - [A Treasury](<https://music.apple.com/ca/album/cello-song/1440822546>) — Nick Drake
